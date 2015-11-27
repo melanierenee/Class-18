@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animations</title>
+</head>
+<body>
+  <span class="shootingStar left">&#9732;</span>
+  <span class="shootingStar right">&#9732;</span>
+
+  <style>
+    body {
+      background:black;
+    }
+
+    .shootingStar {
+      /* Set up the normal state */
+      color:yellow;
+      font-size:50px;
+      font-weight: bold;
+      position: absolute;
+    }
+
+    .left {
+      -webkit-transform:rotate(192deg);
+      -webkit-animation:shootLeft 3s linear infinite;
+    }
+
+        @-webkit-keyframes shootLeft {
+          0% {
+            top:100%;
+            left:0;
+          }
+          100% {
+            top:0;
+            left:100%;
+            /*transform: scale(5.5);*/
+            color: white;
+          }
+        }
+
+    .right {
+      -webkit-transform:rotate(-192deg);
+      -webkit-animation: shootRight 3s linear infinite;
+    }
+
+        @-webkit-keyframes shootRight {
+          0% {
+            top:100%;
+            right:0;
+          }
+
+          100% {
+            top: 0;
+            right:100%;
+            transform:scale(1.5);
+            color: white;
+          }
+        }
+  </style>
+</body>
+</html>

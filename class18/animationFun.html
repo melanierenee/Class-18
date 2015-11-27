@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animation Fun</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		body {
+			background-color: cadetblue;
+		}
+
+		.snowFlake {
+			color: white;
+			position: absolute; /*the animation has the changing positions, so this needs to be defined in order for animation to work */
+			animation: snow 5s linear infinite;
+		}
+
+		.myBox {
+			background-color: tomato;
+			width: 200px;
+			height: 200px;
+		}
+
+		/*similar to a media query > using @
+		BELOW - naming your animation*/
+
+		@keyframes snow {
+			0% {
+				top: 0;
+			}
+
+			10%, 50%, 90% {
+				margin-left: 100px;
+				color: tomato;
+			}
+
+			40%, 60%, 100% {
+				margin-left: 0;
+				color: gold;
+			}
+
+			100% {
+				top:100%; /*going down to bottom - you wouldnt use bottom=0 b/c it needs to be the same property */
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="snowFlake snowFlake1">&#10052;</div>
+	<div class="myBox animated hinge infinite"></div> <!-- instructions on CSS file tell you to add animate before specific type -->
+</body>
+</html>
